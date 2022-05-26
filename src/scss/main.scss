@@ -1,0 +1,292 @@
+/*** Variables ***/
+
+// Colors
+$clr-dark-grey: hsl(212, 24%, 26%);
+$clr-grey: hsl(211, 10%, 45%);
+$clr-light-grey: hsl(223, 19%, 93%);
+$clr-offwhite:   hsl(228, 33%, 97%);
+$clr-white:  hsl(0, 0%, 100%);
+
+
+$clr-blue:  hsl(238, 40%, 52%);
+$clr-light-blue:  hsl(239, 57%, 85%);
+$clr-red:  hsl(358, 79%, 66%);
+$clr-light-red:  hsl(357, 100%, 86%);
+
+//Typography
+$ff-primary: 'Rubik', sans-serif;
+
+$fw-700: 700;
+$fw-500: 500;
+$fw-400: 400;
+$fw-300: 300;
+
+$fs-400: 1rem;
+
+
+/*** Utility classes ***/
+.container {
+    max-width: 750px;
+    margin-inline: auto;
+    padding: 2rem 1rem;
+}
+
+.flex {
+    display: flex;
+    gap: 2rem;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+// Text color
+.text-dark-grey { color: $clr-dark-grey; }
+.text-grey { color: $clr-grey; }
+.text-blue { color: $clr-blue; }
+.text-light-blue { color: $clr-light-blue; }
+.text-red { color: $clr-red; }
+.text-light-red { color: $clr-light-red; }
+.text-white { color: $clr-white; }
+
+// Bakcground-color
+.bg-blue { background-color: $clr-blue ; }
+.bg-light-grey { background-color: $clr-offwhite; }
+.bg-white { background-color: $clr-white; }
+
+// font-weight
+.fw-700 { font-weight: $fw-700; }
+.fw-500 { font-weight: $fw-500; }
+.fw-400 { font-weight: $fw-400; }
+.fw-300 { font-weight: $fw-300; }
+
+// Margin
+.my-sm { margin-block: 1rem;}
+.my-md { margin-block: 2rem;}
+.my-lrg { margin-block: 3rem;}
+
+
+// visually hide the element, but keep it in the accessability tree
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/*** Reset ***/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: $fs-400;
+  font-family: $ff-primary;
+  background-color: $clr-offwhite;
+  color: $clr-grey;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+svg {
+  cursor: pointer;
+}
+
+
+/*** Components ***/
+.btn {
+  display: inline-flex;
+  gap: .45rem;
+  align-items: center;
+  color: $clr-blue;
+  font-weight: $fw-700;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover:not(.counter-btn, .submit-btn), 
+  &:hover path, 
+  &:focus-within:not(.counter-btn, .submit-btn),
+  &:focus-within path {
+    color: $clr-light-blue;
+    fill: $clr-light-blue;
+    outline-color: $clr-blue;
+  }
+
+  &.counter-btn {
+    gap: .5rem;
+    background-color: $clr-offwhite;
+
+    button {
+      padding: 1em;
+    }
+
+    button:hover path, 
+    button:focus-within,
+    button:focus-within path {
+      fill: $clr-blue;
+      outline-color: $clr-blue;
+    }
+
+    @media (min-width: 500px) {
+      flex-direction: column;
+    }
+  }
+
+  &.delete-btn {
+    color: $clr-red;
+
+    &:hover,
+    &:hover path,
+    &:focus-within,
+    &:focus-within path {
+      color: $clr-light-red;
+      fill:  $clr-light-red;
+      outline-color: $clr-red;
+    }
+  }
+
+  &.submit-btn {
+    padding: .5em 1.25em;
+    color: $clr-white;
+    background-color: $clr-blue;
+
+    &:disabled{
+      background-color: $clr-grey;
+    }
+
+    &:focus-within {
+      background-color: $clr-light-blue;
+      outline-color: $clr-blue;
+    }
+  }
+ 
+  &.submit-btn:hover {
+    background-color: $clr-light-blue;
+  }
+}
+
+.comment, 
+.reply {
+  padding: clamp(1rem, 3vw, 1.75rem);
+  margin-block-end: .55rem;
+  border-radius: 10px;
+  background-color: $clr-white;
+
+  .content {
+    flex-basis: 100%;
+
+    > p {
+      margin-block: 1rem;
+    }
+  }
+  
+  .details {
+    gap: .75rem;
+  }
+  
+  .avatar {
+    max-width: 30px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 500px) {
+    display: flex;
+    gap: 1.75rem;
+
+    .content > p {
+      margin-block-end: 0;
+    }
+  }
+}
+
+
+/** General styles **/
+.comments {
+  margin-block-end: 1.5rem;
+}
+
+.comments > * + * {
+  margin-block-start: 1.5rem;
+}
+
+.replies {
+  border-left: solid 1px $clr-light-grey;
+  padding-inline-start: 1.5rem;
+  margin-inline-start: max(1.5vw, .001rem);
+}
+
+.comment-form {
+  display: flex;
+  gap: 1.5rem;
+  margin-block-end: .55rem;
+  padding: clamp(1rem, 3vw, 1.75rem);
+  background-color: $clr-white;
+  border-radius: 10px;
+
+  .avatar {
+    max-width: 40px;
+  }
+
+  .comment-textarea {
+    width: 100%;
+    color: $clr-grey;
+    border-color: $clr-light-grey;
+    border-radius: 10px;
+    padding: .5em 1em;
+  }
+
+  .comment-textarea:focus-within {
+    outline-color: $clr-blue;
+  }
+} 
+
+
+
+
+
+
+
+
+
