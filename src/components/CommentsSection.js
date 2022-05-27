@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { 
     createComment, 
-    createReply,
     updateComment as editComment,
 } from "../helpers/helperFunctions"
 import Comment from "./Comment"

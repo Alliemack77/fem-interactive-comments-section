@@ -8,7 +8,6 @@ const Comment = ({
     currentUser, 
     comment, 
     addComment,
-    addReply,
     updateComment,
     deleteComment,
     activeComment,
@@ -20,7 +19,6 @@ const Comment = ({
 
     const fiveMinutes = 300000
     const timePassed = new Date() - new Date(comment.createdAt) > fiveMinutes
-    const canReply = Boolean(currentUser)
     const canDelete = currentUser === comment.user.username && !timePassed 
     const canEdit = currentUser === comment.user.username && !timePassed 
     const isEditing = activeComment && activeComment.type === 'editing' && activeComment.id === comment.id
