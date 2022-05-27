@@ -85,13 +85,14 @@ const CommentSection = ({currentUser}) => {
     }
     
     return (
-        <section className="container">
-            <h1>Comments</h1>
-            <div className='comments'>
-                {
-                    comments.map(comment => {
-                        return (
-                            <Comment 
+        <main>
+            <section className="container">
+                <h1>Comments</h1>
+                <div className='comments'>
+                    {
+                        comments.map(comment => {
+                            return (
+                                <Comment 
                                 key={comment.id}
                                 type='parent'
                                 currentUser={currentUser}
@@ -103,15 +104,16 @@ const CommentSection = ({currentUser}) => {
                                 setActiveComment={setActiveComment}
                                 parentId={comment.user.username}
                                 />
-                        )
-                    })
-                }
-            </div>
-            <Form 
-                labelText='Send'
-                handleSubmit={addComment}/>
-            
-        </section>
+                                )
+                            })
+                        }
+                </div>
+                <Form 
+                    labelText='Send'
+                    handleSubmit={addComment}/>
+                
+            </section>
+        </main>
     )
 }
 
