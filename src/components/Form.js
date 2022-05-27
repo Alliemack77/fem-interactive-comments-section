@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useViewport } from "../helpers/hooks"
 import Button from "./Button"
 import currentUserImg from '../images/image-juliusomo.png'

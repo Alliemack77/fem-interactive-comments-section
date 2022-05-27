@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { getTimePassed } from "../helpers/helperFunctions"
 import { useViewport } from "../helpers/hooks"
 import Button from "./Button"
@@ -37,7 +36,6 @@ const Comment = ({
     return (
         <article >
             <div className={`${type === 'parent' ? 'comment' : 'reply'} `}>
-                {/* { windowWidth > 500 && <CounterButton likeCount={comment.score} />} */}
                 { windowWidth > 500 && counterButton}
                 <div className='content'>
                     <div className='flex justify-space-between'>
