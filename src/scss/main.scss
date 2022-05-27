@@ -24,6 +24,53 @@ $fw-300: 300;
 $fs-400: 1rem;
 
 
+/*** Reset ***/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: $fs-400;
+  font-family: $ff-primary;
+  background-color: $clr-offwhite;
+  color: $clr-grey;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+svg {
+  cursor: pointer;
+}
+
+
 /*** Utility classes ***/
 .container {
     max-width: 750px;
@@ -69,7 +116,6 @@ $fs-400: 1rem;
 .my-md { margin-block: 2rem;}
 .my-lrg { margin-block: 3rem;}
 
-
 // visually hide the element, but keep it in the accessability tree
 .sr-only {
   position: absolute;
@@ -81,53 +127,6 @@ $fs-400: 1rem;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap; /* added line */
   border: 0;
-}
-
-/*** Reset ***/
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-p {
-  margin: 0;
-}
-
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  font-size: $fs-400;
-  font-family: $ff-primary;
-  background-color: $clr-offwhite;
-  color: $clr-grey;
-}
-
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-button,
-textarea {
-  font: inherit;
-}
-
-button {
-  border: none;
-  background-color: transparent;
-}
-
-svg {
-  cursor: pointer;
 }
 
 
@@ -259,6 +258,7 @@ svg {
 
 .comment-form {
   display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   margin-block-end: .55rem;
   padding: clamp(1rem, 3vw, 1.75rem);
@@ -269,16 +269,26 @@ svg {
     max-width: 40px;
   }
 
-  .comment-textarea {
+  .textarea {
+    resize: none;
     width: 100%;
     color: $clr-grey;
     border-color: $clr-light-grey;
     border-radius: 10px;
     padding: .5em 1em;
+
+    &:focus-within {
+      outline-color: $clr-blue;
+    }
   }
 
-  .comment-textarea:focus-within {
-    outline-color: $clr-blue;
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 500px) {
+    flex-direction: row;
   }
 } 
 

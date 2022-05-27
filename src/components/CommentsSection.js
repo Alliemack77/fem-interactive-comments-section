@@ -111,7 +111,6 @@ const CommentSection = ({currentUser}) => {
                 <Form 
                     labelText='Send'
                     handleSubmit={addComment}/>
-                
             </section>
         </main>
     )

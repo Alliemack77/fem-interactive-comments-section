@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getTimePassed } from "../helpers/helperFunctions"
+import { useViewport } from "../helpers/hooks"
 import Button from "./Button"
 import Form from "./Form"
 import CounterButton from "./CounterButton"
@@ -15,8 +16,7 @@ const Comment = ({
     type, 
     parentId
 }) => {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-
+    const {windowWidth} = useViewport()
     const fiveMinutes = 300000
     const timePassed = new Date() - new Date(comment.createdAt) > fiveMinutes
     const canDelete = currentUser === comment.user.username && !timePassed 
@@ -33,11 +33,6 @@ const Comment = ({
                         }
                     </div>
 
-    useEffect(() => {
-        window.addEventListener('resize', () => {
-            setWindowWidth(window.innerWidth)
-        })
-    }, [windowWidth] )
 
     return (
         <article >
