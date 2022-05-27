@@ -14,7 +14,7 @@ Users should be able to:
 ### Links
 
 [GitHub](https://github.com/Alliemack77/fem-interactive-comments-section)
-[See solution live](https://your-live-site-url.com)
+[See live solution](https://interactivecommentsection.netlify.app)
 
 ### Built with
 
