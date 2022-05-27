@@ -1,6 +1,6 @@
 export const createComment = async (text, replyId) => {
     return {
-        id: Math.floor(Math.random()* (100 - 5 + 1) + 5), 
+        id: Math.floor(Math.random() * (10000 - 5 + 1) + 5), 
         content: text, 
         createdAt: new Date().toISOString(), 
         score: 0, 
