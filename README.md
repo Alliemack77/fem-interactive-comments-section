@@ -10,6 +10,7 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Create, Read, Update, and Delete comments and replies
 - Upvote and downvote comments
+- *BONUS* Comments are being populated from my project [Comments Section API](https://fem-comments-section-api.herokuapp.com/comments)
 
 ### Links
 
@@ -22,4 +23,5 @@ Users should be able to:
 - Semantic HTML5 markup
 - Sass
 - Mobile-first workflow
+- [Comments Section API](https://github.com/Alliemack77/fem-comments-section-api)
 
