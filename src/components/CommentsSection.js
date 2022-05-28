@@ -12,9 +12,9 @@ const CommentSection = ({currentUser}) => {
     
     // get comments
     useEffect(() => {
-        fetch('http://localhost:3000/data.json')
+        fetch('https://fem-comments-section-api.herokuapp.com/comments')
         .then(res => res.json())
-        .then(data => setComments(data.comments))
+        .then(data => setComments(data))
     }, [])
 
     const addComment = (text, replyId) => {
