@@ -89,7 +89,7 @@ const CommentSection = ({currentUser}) => {
             <section className="container">
                 <h1>Comments</h1>
                 <div className='comments'>
-                    {
+                    { comments ? 
                         comments.map(comment => {
                             return (
                                 <Comment 
@@ -105,7 +105,7 @@ const CommentSection = ({currentUser}) => {
                                 parentId={comment.user.username}
                                 />
                                 )
-                            })
+                            }) : <h2>Loading comments... </h2>
                         }
                 </div>
                 <Form 
