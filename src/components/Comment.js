@@ -41,7 +41,7 @@ const Comment = ({
                     <div className='flex justify-space-between'>
                         <div className='details flex align-items-center'>
                             <img className='avatar' src={comment.user.image.png} alt="the author's avatar"/>
-                            <p className='text-dark-grey fw-700'>{comment.user.username}</p>
+                            <h2 className='text-dark-grey fw-700'>{comment.user.username}</h2>
                             <p>{getTimePassed(comment)}</p>
                         </div>
                         { windowWidth > 500 && actions }
